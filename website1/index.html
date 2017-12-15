@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>登录11112222</title>
+    <script src="js/jquery-3.2.1.min.js"></script>
 
 </head>
 <body>
-<form class="layui-form" action="main\Content.php" method="post">
+<form class="layui-form" action="" method="post">
     <div class="layui-form-item">
         <label class="layui-form-label">身份证号:</label>
         <div class="layui-input-block">
@@ -30,6 +31,8 @@
         </div>
     </div>
 </form>
+
+
 <script src="js/layui/layui.js"></script>
 <script>
     //Demo
@@ -37,9 +40,22 @@
         var form = layui.form;
 
         //监听提交
-        form.on('submit(formDemo)', function (data) {
-            layer.msg(JSON.stringify(data.field));
-            return true;
+        form.on('submit(formDemo)', function (dt) {
+
+
+            layer.msg(JSON.stringify(dt.field));
+
+            debugger;
+            $.ajax({
+                url: "main/Content.php",
+                data:{"idNumber":123,"password":"待"},
+                dataType: "text",
+                success: function (data, status) {
+                    alert(data);
+                }
+            });
+
+            return false;
         });
     });
 </script>
