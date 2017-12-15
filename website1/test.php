@@ -14,3 +14,4 @@ $IdNumber = "41232619910903575X";
 
 echo json_encode(TbPeopleBase::getTbPeopleObjByIdNumber($IdNumber));
 
+//12233
